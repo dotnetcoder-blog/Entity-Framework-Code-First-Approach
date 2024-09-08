@@ -18,7 +18,7 @@ namespace Dnc.Staff.Data.Models.Entities
         public decimal Salary { get; set; }
 
         public Employee Manager { get; set; }
-        public int ManagerId { get; set; }
+        public int? ManagerId { get; set; }
 
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
