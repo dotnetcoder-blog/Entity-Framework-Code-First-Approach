@@ -15,7 +15,7 @@ namespace Dnc.Staff.Repository
         public StaffDbContext Context { get; }
         public DbSet<TEntity> Table { get; }
 
-        protected GenericRepository(StaffDbContext context)
+        public GenericRepository(StaffDbContext context)
         {
             Context = context;
             Table = Context.Set<TEntity>();
@@ -25,7 +25,6 @@ namespace Dnc.Staff.Repository
         {
             return await Table.AsNoTracking().ToListAsync();
         }
-
         public async Task<IEnumerable<TEntity>> GetAllIncludeAsync(Expression<Func<TEntity, object>>[] properties)
         {
             var queryable = Table.AsNoTracking();
@@ -35,60 +34,50 @@ namespace Dnc.Staff.Repository
             }
             return await queryable.ToListAsync();
         }
-
         public async Task<IEnumerable<TEntity>> GetByIncludeAsync(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, object>>[] properties)
         {
             var queryable = Table.AsNoTracking();
             var query = properties.Aggregate(queryable, (current, property) => current.Include(property));
             return await query.Where(predicate).ToListAsync();
         }
-
         public async Task<TEntity> FindByKey(int key)
         {
             return await Table.AsNoTracking().SingleOrDefaultAsync(BuildLambda<TEntity>(key));
         }
-
         public async Task<IEnumerable<TEntity>> FindByAsync(Expression<Func<TEntity, bool>> predicate)
         {
             return await Table.AsNoTracking().Where(predicate).ToListAsync();
         }
-
         public async Task<int> AddAsync(TEntity entity)
         {
             await Table.AddAsync(entity);
             return await SaveChangesAsync();
         }
-
         public async Task<int> AddRangeAsync(IEnumerable<TEntity> entities)
         {
             await Table.AddRangeAsync(entities);
             return await SaveChangesAsync();
         }
-
         public async Task<int> DeleteAsync(TEntity entity)
         {
             Table.Remove(entity);
             return await SaveChangesAsync();
         }
-
         public async Task<int> DeleteRangeAsync(IEnumerable<TEntity> entities)
         {
             Table.RemoveRange(entities);
             return await SaveChangesAsync();
         }
-
         public async Task<int> UpdateAsync(TEntity entity)
         {
             Table.Update(entity);
             return await SaveChangesAsync();
         }
-
         public async Task<int> UpdateRangeAsync(IEnumerable<TEntity> entities)
         {
             Table.UpdateRange(entities);
             return await SaveChangesAsync();
         }
-
         private static Expression<Func<TItem, bool>> BuildLambda<TItem>(int id)
         {
             var item = Expression.Parameter(typeof(TItem), "item");
@@ -97,7 +86,6 @@ namespace Dnc.Staff.Repository
             var equal = Expression.Equal(property, constant);
             return Expression.Lambda<Func<TItem, bool>>(equal, item);
         }
-
         private async Task<int> SaveChangesAsync()
         {
             try

@@ -5,7 +5,13 @@ VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dnc.Staff.Data", "Dnc.Staff.Data\Dnc.Staff.Data.csproj", "{85214391-17C3-4921-B168-D65ED0B4A31F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dnc.Staff.Repository", "Dnc.Staff.Repository\Dnc.Staff.Repository.csproj", "{1699055C-DA6E-4734-8BA7-7A5CE1D89153}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dnc.Staff.Repository", "Dnc.Staff.Repository\Dnc.Staff.Repository.csproj", "{1699055C-DA6E-4734-8BA7-7A5CE1D89153}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dnc.Objects", "Dnc.Objects\Dnc.Objects.csproj", "{AD38C7B6-9D0B-4182-82DF-C29C99A2EFA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dnc.Staff.Services", "Dnc.Staff.Services\Dnc.Staff.Services.csproj", "{A5738EA3-F55B-44EC-80FE-A9094DB9F8C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dnc.Staff.ApiApp", "Dnc.Staff.ApiApp\Dnc.Staff.ApiApp.csproj", "{D176F7B8-E20D-419A-A685-4C97CE8CC255}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{1699055C-DA6E-4734-8BA7-7A5CE1D89153}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1699055C-DA6E-4734-8BA7-7A5CE1D89153}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1699055C-DA6E-4734-8BA7-7A5CE1D89153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD38C7B6-9D0B-4182-82DF-C29C99A2EFA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD38C7B6-9D0B-4182-82DF-C29C99A2EFA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD38C7B6-9D0B-4182-82DF-C29C99A2EFA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD38C7B6-9D0B-4182-82DF-C29C99A2EFA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5738EA3-F55B-44EC-80FE-A9094DB9F8C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5738EA3-F55B-44EC-80FE-A9094DB9F8C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5738EA3-F55B-44EC-80FE-A9094DB9F8C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5738EA3-F55B-44EC-80FE-A9094DB9F8C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D176F7B8-E20D-419A-A685-4C97CE8CC255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D176F7B8-E20D-419A-A685-4C97CE8CC255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D176F7B8-E20D-419A-A685-4C97CE8CC255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D176F7B8-E20D-419A-A685-4C97CE8CC255}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
